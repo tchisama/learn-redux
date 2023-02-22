@@ -1,11 +1,17 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { update } from "./redux/userSlice";
 
 function App() {
-  const name = useSelector(state=>state.user.name)
-  const email = useSelector(state=>state.user.email)
+  const user = useSelector(state=>state.user)
+  const dispatch = useDispatch()
+  const SwitchUser = ()=>{
+    dispatch(update({email:"lora@gmail.com",name:"lora"}))
+  }
+
   return (
     <div className="">
-      hello i'm {name}, and my email is :{email}
+      hello i'm {user.name}, and my email is :{user.email}
+      <button onClick={SwitchUser}>go to lora</button>
     </div>
   );
 }
