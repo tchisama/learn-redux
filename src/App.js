@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { remove, update } from "./redux/userSlice";
+import { remove, update  } from "./redux/userSlice";
 
 function App() {
   const user = useSelector(state=>state.user)
